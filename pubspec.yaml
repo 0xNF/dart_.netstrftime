@@ -1,6 +1,6 @@
 name: dotnetstrftime
 description: Package offering support for formatting DateTime's according to the same rules as .NET does with their Format Strings.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/0xNF/dart_.netstrftime
 homepage: https://github.com/0xNF/dart_.netstrftime
 
