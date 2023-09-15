@@ -1,5 +1,4 @@
 import 'package:dotnetstrftime/dotnetstrftime.dart';
-import 'package:dotnetstrftime/src/format_token_type.dart';
 
 void main() {
   // May 8th, 2023 T 2:42:33.2332

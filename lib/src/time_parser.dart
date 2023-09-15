@@ -1,6 +1,5 @@
 import 'package:collection/collection.dart';
 import 'package:dotnetstrftime/dotnetstrftime.dart';
-import 'package:dotnetstrftime/src/format_token_type.dart';
 import 'package:dotnetstrftime/src/utils.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:characters/characters.dart';
