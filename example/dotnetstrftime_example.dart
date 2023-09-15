@@ -5,13 +5,16 @@ void main() {
   var dtWithEmptyMilliseconds = DateTime(2023, 05, 08, 14, 42, 50, 000, 678);
 
   // Formatting with a raw character
-  dtWithEmptyMilliseconds.formatAsDotNET("d"); // "5/8/2023"
+  dtWithEmptyMilliseconds.formatAsDotNET("dd"); // "05"
 
   // Formatting with pre-defined tokens
-  dtWithEmptyMilliseconds.formatAsDotNET(DateTimeFormatTokenTypeDotNet.d.str); // "5/8/2023"
+  dtWithEmptyMilliseconds.formatAsDotNET(DateTimeFormatTokenTypeDotNet.dd.str); // "05"
+
+  // Formatting with a singleton token
+  dtWithEmptyMilliseconds.formatAsDotNET("d"); // "5/8/2023"
 
   // Formatting with custom interjections. Surrounding the element in quotations is a string literal that won't be parsed for tokens
-  dtWithEmptyMilliseconds.formatAsDotNET('d "xyz"'); // "5/8/2023 xyz"
+  dtWithEmptyMilliseconds.formatAsDotNET('dd "xyz"'); // "05 xyz"
 
   /// Catching invalid formatting:
   try {

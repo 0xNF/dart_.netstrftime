@@ -13,39 +13,56 @@ List<DateFormatToken> _dateFormatStringParserCSharp(String formatString) {
 
   if (isSingleton) {
     final chars = formatString.characters.firstOrNull;
-    if (chars == DateTimeFormatTokenTypeDotNet.yearMonth.str || chars == DateTimeFormatTokenTypeDotNet.yearMonthlower.str) {
+    if (chars == DateTimeFormatTokenTypeDotNet.yearMonth.str ||
+        chars == DateTimeFormatTokenTypeDotNet.yearMonthlower.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.yearMonth));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.universalFullDateTime.str) {
-      lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.universalFullDateTime));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.universalSortableDateTime.str) {
-      lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.universalSortableDateTime));
+    } else if (chars ==
+        DateTimeFormatTokenTypeDotNet.universalFullDateTime.str) {
+      lst.add(
+          DateFormatToken(DateTimeFormatTokenTypeDotNet.universalFullDateTime));
+    } else if (chars ==
+        DateTimeFormatTokenTypeDotNet.universalSortableDateTime.str) {
+      lst.add(DateFormatToken(
+          DateTimeFormatTokenTypeDotNet.universalSortableDateTime));
     } else if (chars == DateTimeFormatTokenTypeDotNet.longTime.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.longTime));
     } else if (chars == DateTimeFormatTokenTypeDotNet.shortTime.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.shortTime));
     } else if (chars == DateTimeFormatTokenTypeDotNet.sortableDateTime.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.sortableDateTime));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.rfc1123.str || chars == DateTimeFormatTokenTypeDotNet.rfc1123lower.str) {
+    } else if (chars == DateTimeFormatTokenTypeDotNet.rfc1123.str ||
+        chars == DateTimeFormatTokenTypeDotNet.rfc1123lower.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.rfc1123));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.roundTripDateTime.str || chars == DateTimeFormatTokenTypeDotNet.roundTripDateTimelower.str) {
+    } else if (chars == DateTimeFormatTokenTypeDotNet.roundTripDateTime.str ||
+        chars == DateTimeFormatTokenTypeDotNet.roundTripDateTimelower.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.roundTripDateTime));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.monthDay.str || chars == DateTimeFormatTokenTypeDotNet.monthDaylower.str) {
+    } else if (chars == DateTimeFormatTokenTypeDotNet.monthDay.str ||
+        chars == DateTimeFormatTokenTypeDotNet.monthDaylower.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.monthDay));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.generalDateTimeLongTime.str) {
-      lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.generalDateTimeLongTime));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.generalDateTimeShortTime.str) {
-      lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.generalDateTimeShortTime));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.fullDateTimeLongTime.str) {
-      lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.fullDateTimeLongTime));
-    } else if (chars == DateTimeFormatTokenTypeDotNet.fullDateTimeShortTime.str) {
-      lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.fullDateTimeShortTime));
+    } else if (chars ==
+        DateTimeFormatTokenTypeDotNet.generalDateTimeLongTime.str) {
+      lst.add(DateFormatToken(
+          DateTimeFormatTokenTypeDotNet.generalDateTimeLongTime));
+    } else if (chars ==
+        DateTimeFormatTokenTypeDotNet.generalDateTimeShortTime.str) {
+      lst.add(DateFormatToken(
+          DateTimeFormatTokenTypeDotNet.generalDateTimeShortTime));
+    } else if (chars ==
+        DateTimeFormatTokenTypeDotNet.fullDateTimeLongTime.str) {
+      lst.add(
+          DateFormatToken(DateTimeFormatTokenTypeDotNet.fullDateTimeLongTime));
+    } else if (chars ==
+        DateTimeFormatTokenTypeDotNet.fullDateTimeShortTime.str) {
+      lst.add(
+          DateFormatToken(DateTimeFormatTokenTypeDotNet.fullDateTimeShortTime));
     } else if (chars == DateTimeFormatTokenTypeDotNet.longDate.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.longDate));
     } else if (chars == DateTimeFormatTokenTypeDotNet.shortDate.str) {
       lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.shortDate));
     } else {
       throw DateTimeFormatException(
-          message: 'Date/Time format string must either be a single character of the recognized set, or requires a minimum of 2+ characters. If formatting a singleton and the full date form is not desired, preface with "%"');
+          message:
+              'Date/Time format string must either be a single character of the recognized set, or requires a minimum of 2+ characters. If formatting a singleton and the full date form is not desired, preface with "%"');
     }
     return lst;
   }
@@ -203,10 +220,12 @@ List<DateFormatToken> _dateFormatStringParserCSharp(String formatString) {
                 /* check for sept f */
                 iter.moveNext();
                 if (iter.charactersAfter.firstOrNull == 'f') {
-                  lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.fffffff));
+                  lst.add(
+                      DateFormatToken(DateTimeFormatTokenTypeDotNet.fffffff));
                   iter.moveNext();
                 } else {
-                  lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.ffffff));
+                  lst.add(
+                      DateFormatToken(DateTimeFormatTokenTypeDotNet.ffffff));
                 }
               } else {
                 lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.fffff));
@@ -243,10 +262,12 @@ List<DateFormatToken> _dateFormatStringParserCSharp(String formatString) {
                 /* check for sept f */
                 iter.moveNext();
                 if (iter.charactersAfter.firstOrNull == 'F') {
-                  lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.FFFFFFF));
+                  lst.add(
+                      DateFormatToken(DateTimeFormatTokenTypeDotNet.FFFFFFF));
                   iter.moveNext();
                 } else {
-                  lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.FFFFFF));
+                  lst.add(
+                      DateFormatToken(DateTimeFormatTokenTypeDotNet.FFFFFF));
                 }
               } else {
                 lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.FFFFF));
@@ -295,7 +316,8 @@ List<DateFormatToken> _dateFormatStringParserCSharp(String formatString) {
     /* check escape */
     else if (cur == r'\') {
       if (iter.moveNext()) {
-        lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.other, iter.current));
+        lst.add(
+            DateFormatToken(DateTimeFormatTokenTypeDotNet.other, iter.current));
       }
     }
     /* check literal string */
@@ -312,9 +334,12 @@ List<DateFormatToken> _dateFormatStringParserCSharp(String formatString) {
         }
       }
       if (iter.current != '"') {
-        throw DateTimeFormatException(message: 'Cannot parse time format string: missing closing quote character');
+        throw DateTimeFormatException(
+            message:
+                'Cannot parse time format string: missing closing quote character');
       }
-      lst.add(DateFormatToken(DateTimeFormatTokenTypeDotNet.other, literalBuilder.toString()));
+      lst.add(DateFormatToken(
+          DateTimeFormatTokenTypeDotNet.other, literalBuilder.toString()));
     }
     /* check next defined as Custom Specifier */
     else if (cur == '%') {
@@ -350,78 +375,120 @@ extension TimeFormating on DateTime {
           final s = intl.DateFormat('EEEE', l).format(this);
           sb.add(s);
         case DateTimeFormatTokenTypeDotNet.f:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           sb.add(zeroPadRight(s, 1)[0]);
         case DateTimeFormatTokenTypeDotNet.ff:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           sb.add(zeroPadRight(s).substring(0, 2));
         case DateTimeFormatTokenTypeDotNet.fff:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           sb.add(zeroPadRight(s, 3).substring(0, 3));
         case DateTimeFormatTokenTypeDotNet.ffff:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           sb.add(zeroPadRight(s, 4).substring(0, 4));
         case DateTimeFormatTokenTypeDotNet.fffff:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           sb.add(zeroPadRight(s, 5).substring(0, 5));
         case DateTimeFormatTokenTypeDotNet.ffffff:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           sb.add(zeroPadRight(s, 6).substring(0, 6));
         case DateTimeFormatTokenTypeDotNet.fffffff:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           sb.add(zeroPadRight(s, 7).substring(0, 7));
         case DateTimeFormatTokenTypeDotNet.F:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           final padded = zeroPadRight(s, 1)[0];
-          if (padded.isNotEmpty && padded.split('').whereNot((element) => element == '0').isNotEmpty) {
+          if (padded.isNotEmpty &&
+              padded
+                  .split('')
+                  .whereNot((element) => element == '0')
+                  .isNotEmpty) {
             sb.add(padded);
           } else if (sb.isNotEmpty && sb.last == '.') {
             sb.removeLast();
           }
         case DateTimeFormatTokenTypeDotNet.FF:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           final padded = zeroPadRight(s).substring(0, 2);
-          if (padded.isNotEmpty && padded.split('').whereNot((element) => element == '0').isNotEmpty) {
+          if (padded.isNotEmpty &&
+              padded
+                  .split('')
+                  .whereNot((element) => element == '0')
+                  .isNotEmpty) {
             sb.add(padded);
           } else if (sb.isNotEmpty && sb.last == '.') {
             sb.removeLast();
           }
         case DateTimeFormatTokenTypeDotNet.FFF:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           final padded = zeroPadRight(s, 3).substring(0, 3);
-          if (padded.isNotEmpty && padded.split('').whereNot((element) => element == '0').isNotEmpty) {
+          if (padded.isNotEmpty &&
+              padded
+                  .split('')
+                  .whereNot((element) => element == '0')
+                  .isNotEmpty) {
             sb.add(padded);
           } else if (sb.isNotEmpty && sb.last == '.') {
             sb.removeLast();
           }
         case DateTimeFormatTokenTypeDotNet.FFFF:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           final padded = zeroPadRight(s, 4).substring(0, 4);
-          if (padded.isNotEmpty && padded.split('').whereNot((element) => element == '0').isNotEmpty) {
+          if (padded.isNotEmpty &&
+              padded
+                  .split('')
+                  .whereNot((element) => element == '0')
+                  .isNotEmpty) {
             sb.add(padded);
           } else if (sb.isNotEmpty && sb.last == '.') {
             sb.removeLast();
           }
         case DateTimeFormatTokenTypeDotNet.FFFFF:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           final padded = zeroPadRight(s, 5).substring(0, 5);
-          if (padded.isNotEmpty && padded.split('').whereNot((element) => element == '0').isNotEmpty) {
+          if (padded.isNotEmpty &&
+              padded
+                  .split('')
+                  .whereNot((element) => element == '0')
+                  .isNotEmpty) {
             sb.add(padded);
           } else if (sb.isNotEmpty && sb.last == '.') {
             sb.removeLast();
           }
         case DateTimeFormatTokenTypeDotNet.FFFFFF:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           final padded = zeroPadRight(s, 6).substring(0, 6);
-          if (padded.isNotEmpty && padded.split('').whereNot((element) => element == '0').isNotEmpty) {
+          if (padded.isNotEmpty &&
+              padded
+                  .split('')
+                  .whereNot((element) => element == '0')
+                  .isNotEmpty) {
             sb.add(padded);
           } else if (sb.isNotEmpty && sb.last == '.') {
             sb.removeLast();
           }
         case DateTimeFormatTokenTypeDotNet.FFFFFFF:
-          final s = "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
+          final s =
+              "${zeroPadRight(millisecond, 3)}${zeroPadRight(microsecond, 4)}";
           final padded = zeroPadRight(s, 7).substring(0, 7);
-          if (padded.isNotEmpty && padded.split('').whereNot((element) => element == '0').isNotEmpty) {
+          if (padded.isNotEmpty &&
+              padded
+                  .split('')
+                  .whereNot((element) => element == '0')
+                  .isNotEmpty) {
             sb.add(padded);
           } else if (sb.isNotEmpty && sb.last == '.') {
             sb.removeLast();
@@ -448,7 +515,8 @@ extension TimeFormating on DateTime {
               /* otherwise write it as a normal +/- timezone */
               final hours = timeZoneOffset.inHours;
               final minutes = timeZoneOffset.inMinutes % 60;
-              sb.add("${timeZoneOffset.isNegative ? '-' : '+'}${zeroPadLeft(hours)}:${zeroPadLeft(minutes)}");
+              sb.add(
+                  "${timeZoneOffset.isNegative ? '-' : '+'}${zeroPadLeft(hours)}:${zeroPadLeft(minutes)}");
             }
           }
         case DateTimeFormatTokenTypeDotNet.m:
@@ -490,11 +558,13 @@ extension TimeFormating on DateTime {
           sb.add("${timeZoneOffset.isNegative ? '-' : '+'}$hours");
         case DateTimeFormatTokenTypeDotNet.zz:
           final hours = timeZoneOffset.inHours;
-          sb.add("${timeZoneOffset.isNegative ? '-' : '+'}${zeroPadLeft(hours)}");
+          sb.add(
+              "${timeZoneOffset.isNegative ? '-' : '+'}${zeroPadLeft(hours)}");
         case DateTimeFormatTokenTypeDotNet.zzz:
           final hours = timeZoneOffset.inHours;
           final minutes = timeZoneOffset.inMinutes % 60;
-          sb.add("${timeZoneOffset.isNegative ? '-' : '+'}${zeroPadLeft(hours)}:${zeroPadLeft(minutes)}");
+          sb.add(
+              "${timeZoneOffset.isNegative ? '-' : '+'}${zeroPadLeft(hours)}:${zeroPadLeft(minutes)}");
         case DateTimeFormatTokenTypeDotNet.timeSeparator:
           final s = intl.DateFormat('Hm', l).format(this);
           sb.add(s[2]);
@@ -512,10 +582,14 @@ extension TimeFormating on DateTime {
         case DateTimeFormatTokenTypeDotNet.longDate:
           sb.add(intl.DateFormat.yMMMMEEEEd(l).format(this));
         case DateTimeFormatTokenTypeDotNet.fullDateTimeShortTime:
-          final hfmt = l == 'en_US' ? intl.DateFormat.HOUR_MINUTE : intl.DateFormat.HOUR24_MINUTE;
+          final hfmt = l == 'en_US'
+              ? intl.DateFormat.HOUR_MINUTE
+              : intl.DateFormat.HOUR24_MINUTE;
           sb.add(intl.DateFormat.yMMMMEEEEd(l).addPattern(hfmt).format(this));
         case DateTimeFormatTokenTypeDotNet.fullDateTimeLongTime:
-          final hfmt = l == 'en_US' ? intl.DateFormat.HOUR_MINUTE_SECOND : intl.DateFormat.HOUR24_MINUTE_SECOND;
+          final hfmt = l == 'en_US'
+              ? intl.DateFormat.HOUR_MINUTE_SECOND
+              : intl.DateFormat.HOUR24_MINUTE_SECOND;
           sb.add(intl.DateFormat.yMMMMEEEEd(l).addPattern(hfmt).format(this));
         case DateTimeFormatTokenTypeDotNet.universalFullDateTime:
           // FYI(nf, 05/09/23): as as 'F', with automatic conversion to utc
@@ -525,22 +599,29 @@ extension TimeFormating on DateTime {
           // FYI(nf, 05/09/23): this specifier mandates that the datetime is in utc,
           // and that the locale is ignored
           final asUTC = toUtc();
-          sb.add(asUTC.formatAsDotNET("yyyy-MM-dd HH:mm:ssZ", Locale.fromSubtags(languageCode: 'en', countryCode: 'US')));
+          sb.add(asUTC.formatAsDotNET("yyyy-MM-dd HH:mm:ssZ",
+              Locale.fromSubtags(languageCode: 'en', countryCode: 'US')));
         case DateTimeFormatTokenTypeDotNet.longTime:
-          final hfmt = l == 'en_US' ? intl.DateFormat.HOUR_MINUTE_SECOND : intl.DateFormat.HOUR24_MINUTE_SECOND;
+          final hfmt = l == 'en_US'
+              ? intl.DateFormat.HOUR_MINUTE_SECOND
+              : intl.DateFormat.HOUR24_MINUTE_SECOND;
           sb.add(intl.DateFormat(hfmt, l).format(this));
         case DateTimeFormatTokenTypeDotNet.shortTime:
-          final hfmt = l == 'en_US' ? intl.DateFormat.HOUR_MINUTE : intl.DateFormat.HOUR24_MINUTE;
+          final hfmt = l == 'en_US'
+              ? intl.DateFormat.HOUR_MINUTE
+              : intl.DateFormat.HOUR24_MINUTE;
           sb.add(intl.DateFormat(hfmt, l).format(this));
         case DateTimeFormatTokenTypeDotNet.sortableDateTime:
           // FYI(nf, 05/09/23): this specifier mandates that the locale is ignored
-          sb.add(formatAsDotNET("yyyy-MM-ddTHH:mm:ss", Locale.fromSubtags(languageCode: 'en', countryCode: 'US')));
+          sb.add(formatAsDotNET("yyyy-MM-ddTHH:mm:ss",
+              Locale.fromSubtags(languageCode: 'en', countryCode: 'US')));
         case DateTimeFormatTokenTypeDotNet.rfc1123:
         case DateTimeFormatTokenTypeDotNet.rfc1123lower:
           // FYI(nf, 05/09/23): this specifier mandates that the datetime is in utc,
           // and that the locale is ignored
           final asUTC = toUtc();
-          sb.add(asUTC.formatAsDotNET("ddd, dd MMM yyyy HH:mm:ss \"GMT\"", Locale.fromSubtags(languageCode: 'en', countryCode: 'US')));
+          sb.add(asUTC.formatAsDotNET("ddd, dd MMM yyyy HH:mm:ss \"GMT\"",
+              Locale.fromSubtags(languageCode: 'en', countryCode: 'US')));
         case DateTimeFormatTokenTypeDotNet.roundTripDateTime:
         case DateTimeFormatTokenTypeDotNet.roundTripDateTimelower:
           sb.add(formatAsDotNET("yyyy-MM-ddTHH:mm:ss.fffffffK", locale));
@@ -548,10 +629,14 @@ extension TimeFormating on DateTime {
         case DateTimeFormatTokenTypeDotNet.monthDaylower:
           sb.add(intl.DateFormat.MMMMd(l).format(this));
         case DateTimeFormatTokenTypeDotNet.generalDateTimeShortTime:
-          final hfmt = l == 'en_US' ? intl.DateFormat.HOUR_MINUTE : intl.DateFormat.HOUR24_MINUTE;
+          final hfmt = l == 'en_US'
+              ? intl.DateFormat.HOUR_MINUTE
+              : intl.DateFormat.HOUR24_MINUTE;
           sb.add(intl.DateFormat.yMd(l).addPattern(hfmt).format(this));
         case DateTimeFormatTokenTypeDotNet.generalDateTimeLongTime:
-          final hfmt = l == 'en_US' ? intl.DateFormat.HOUR_MINUTE_SECOND : intl.DateFormat.HOUR24_MINUTE_SECOND;
+          final hfmt = l == 'en_US'
+              ? intl.DateFormat.HOUR_MINUTE_SECOND
+              : intl.DateFormat.HOUR24_MINUTE_SECOND;
           sb.add(intl.DateFormat.yMd(l).addPattern(hfmt).format(this));
         case DateTimeFormatTokenTypeDotNet.yearMonth:
         case DateTimeFormatTokenTypeDotNet.yearMonthlower:
@@ -559,7 +644,9 @@ extension TimeFormating on DateTime {
         case DateTimeFormatTokenTypeDotNet.customFormat:
         case DateTimeFormatTokenTypeDotNet.stringLiteral:
         case DateTimeFormatTokenTypeDotNet.escape:
-          throw DateTimeFormatException(message: 'An internal parser error occured. The \'${t.token.name}\' token type should never appear in the formatting switch');
+          throw DateTimeFormatException(
+              message:
+                  'An internal parser error occured. The \'${t.token.name}\' token type should never appear in the formatting switch');
       }
     }
     for (int i = 0; i < sb.length; i++) {

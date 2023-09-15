@@ -1,3 +1,7 @@
+## 1.0.3
+- Fixed example dart file 
+- Ran dart format
+
 ## 1.0.2
 - Removed unecessary imports
 

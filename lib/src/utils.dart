@@ -1,10 +1,12 @@
 /// Stringifies an object and left-pads it with 0's
 /// Used for making two-digit timestamp components
-String zeroPadLeft(Object o, [int padLen = 2, String padChar = '0']) => o.toString().padLeft(padLen, padChar);
+String zeroPadLeft(Object o, [int padLen = 2, String padChar = '0']) =>
+    o.toString().padLeft(padLen, padChar);
 
 /// Stringifies an object and right-pads it with 0's
 /// Used for making two-digit timestamp components
-String zeroPadRight(Object o, [int padLen = 2, String padChar = '0']) => o.toString().padRight(padLen, padChar);
+String zeroPadRight(Object o, [int padLen = 2, String padChar = '0']) =>
+    o.toString().padRight(padLen, padChar);
 
 /// List of space characters that may appear in a string, useful for normalizing into regular ascii space (20)
 const List<String> spaceCharacters = [

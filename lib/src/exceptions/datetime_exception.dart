@@ -9,11 +9,16 @@ class DateTimeFormatException implements Exception {
   /// Stack Trace of the exception
   final StackTrace? stackTrace;
 
-  const DateTimeFormatException({this.message, this.innerException, this.stackTrace});
+  const DateTimeFormatException(
+      {this.message, this.innerException, this.stackTrace});
 
   @override
   String toString() {
-    List<String> portions = [if (message != null) "message=$message", if (innerException != null) "innerException=$innerException", if (stackTrace != null) "stackTrace=$stackTrace"];
+    List<String> portions = [
+      if (message != null) "message=$message",
+      if (innerException != null) "innerException=$innerException",
+      if (stackTrace != null) "stackTrace=$stackTrace"
+    ];
     return "DateTimeFormatException[${portions.join(';')}]";
   }
 }

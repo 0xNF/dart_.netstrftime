@@ -29,9 +29,11 @@ void main() {
     setUp(() async {
       await initializeDateFormatting();
       tz.initializeTimeZones();
-      final loc = tz.getLocation('Australia/Eucla'); // Because is weird and has 8:45
+      final loc =
+          tz.getLocation('Australia/Eucla'); // Because is weird and has 8:45
       dtAM = tz.TZDateTime.from(dtAM, loc);
-      dtPM = tz.TZDateTime.utc(dtAM.year, dtAM.month, dtAM.day, 23, dtAM.minute, dtAM.second, dtAM.millisecond, dtAM.microsecond);
+      dtPM = tz.TZDateTime.utc(dtAM.year, dtAM.month, dtAM.day, 23, dtAM.minute,
+          dtAM.second, dtAM.millisecond, dtAM.microsecond);
     });
 
     /// This is a test of the underlying `intl` library
@@ -50,28 +52,36 @@ void main() {
         expect(dtWithEmptyMilliseconds.formatAsDotNET("d", ja), "2023/5/8");
       });
       test("test Long Date Pattern (D)", () {
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("D"), "Monday, May 8, 2023");
+        expect(
+            dtWithEmptyMilliseconds.formatAsDotNET("D"), "Monday, May 8, 2023");
         expect(dtWithEmptyMilliseconds.formatAsDotNET("D", ja), "2023年5月8日月曜日");
       });
       test("Test Full DateTime Pattern (Short Time) (f)", () {
         // 2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45 PM (en-US)
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("f"), "Monday, May 8, 2023 2:42 PM");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("f", ja), "2023年5月8日月曜日 14:42");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("f"),
+            "Monday, May 8, 2023 2:42 PM");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("f", ja),
+            "2023年5月8日月曜日 14:42");
       });
       test("test Full DateTime Pattern (Long Time) (F)", () {
         // 2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45:30 PM (en-US)
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("F"), "Monday, May 8, 2023 2:42:50 PM");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("F", ja), "2023年5月8日月曜日 14:42:50");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("F"),
+            "Monday, May 8, 2023 2:42:50 PM");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("F", ja),
+            "2023年5月8日月曜日 14:42:50");
       });
       test("test General Date Time Pattern (Short Time) (g)", () {
         // 2009-06-15T13:45:30 -> 6/15/2009 1:45 PM (en-US)
         expect(dtWithEmptyMilliseconds.formatAsDotNET("g"), "5/8/2023 2:42 PM");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("g", ja), "2023/5/8 14:42");
+        expect(
+            dtWithEmptyMilliseconds.formatAsDotNET("g", ja), "2023/5/8 14:42");
       });
       test("test General Date Time Pattern (Long Time) (G)", () {
         // 2009-06-15T13:45:30 -> 6/15/2009 1:45:30 PM (en-US)
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("G"), "5/8/2023 2:42:50 PM");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("G", ja), "2023/5/8 14:42:50");
+        expect(
+            dtWithEmptyMilliseconds.formatAsDotNET("G"), "5/8/2023 2:42:50 PM");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("G", ja),
+            "2023/5/8 14:42:50");
       });
 
       test("test MonthDay Pattern (M, m)", () {
@@ -85,23 +95,33 @@ void main() {
       test("test RoundTrip DateTime (O, o)", () {
         // 2009-06-15T13:45:30-07:00 --> 2009-06-15T13:45:30.0000000-07:00
         // 2009-06-15T13:45:30 (DateTimeKind.Utc) --> 2009-06-15T13:45:30.0000000Z
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("O"), "2023-05-08T14:42:50.0006780+09:00");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("o"), "2023-05-08T14:42:50.0006780+09:00");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("O"),
+            "2023-05-08T14:42:50.0006780+09:00");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("o"),
+            "2023-05-08T14:42:50.0006780+09:00");
 
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("O", ja), "2023-05-08T14:42:50.0006780+09:00");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("o", ja), "2023-05-08T14:42:50.0006780+09:00");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("O", ja),
+            "2023-05-08T14:42:50.0006780+09:00");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("o", ja),
+            "2023-05-08T14:42:50.0006780+09:00");
       });
 
       test("test RFC1123 (R, r)", () {
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("R"), "Mon, 08 May 2023 05:42:50 GMT");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("r"), "Mon, 08 May 2023 05:42:50 GMT");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("R"),
+            "Mon, 08 May 2023 05:42:50 GMT");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("r"),
+            "Mon, 08 May 2023 05:42:50 GMT");
 
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("R", ja), "Mon, 08 May 2023 05:42:50 GMT");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("r", ja), "Mon, 08 May 2023 05:42:50 GMT");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("R", ja),
+            "Mon, 08 May 2023 05:42:50 GMT");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("r", ja),
+            "Mon, 08 May 2023 05:42:50 GMT");
       });
       test("test Sortable DateTime Pattern (s)", () {
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("s"), "2023-05-08T14:42:50");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("s", ja), "2023-05-08T14:42:50");
+        expect(
+            dtWithEmptyMilliseconds.formatAsDotNET("s"), "2023-05-08T14:42:50");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("s", ja),
+            "2023-05-08T14:42:50");
       });
       test("test Short Time Pattern (t)", () {
         expect(dtWithEmptyMilliseconds.formatAsDotNET("t"), "2:42 PM");
@@ -112,13 +132,17 @@ void main() {
         expect(dtWithEmptyMilliseconds.formatAsDotNET("T", ja), "14:42:50");
       });
       test("test Universal Sortable DateTime pattern (u)", () {
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("u"), "2023-05-08 05:42:50Z");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("u", ja), "2023-05-08 05:42:50Z");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("u"),
+            "2023-05-08 05:42:50Z");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("u", ja),
+            "2023-05-08 05:42:50Z");
       });
 
       test("test Universal Full DateTime pattern (U)", () {
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("U"), "Monday, May 8, 2023 5:42:50 AM");
-        expect(dtWithEmptyMilliseconds.formatAsDotNET("U", ja), "2023年5月8日月曜日 5:42:50");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("U"),
+            "Monday, May 8, 2023 5:42:50 AM");
+        expect(dtWithEmptyMilliseconds.formatAsDotNET("U", ja),
+            "2023年5月8日月曜日 5:42:50");
       });
       test("test YearMonth pattern (y, Y)", () {
         expect(dtWithEmptyMilliseconds.formatAsDotNET("y"), "May 2023");
@@ -158,7 +182,8 @@ void main() {
         });
 
         test("Test throws for too few characters in invalid sequence", () {
-          expect(() => dtAM.formatAsDotNET('q'), throwsA(isA<DateTimeFormatException>()));
+          expect(() => dtAM.formatAsDotNET('q'),
+              throwsA(isA<DateTimeFormatException>()));
         });
       });
 
@@ -360,12 +385,15 @@ void main() {
       group("test string literals", () {
         test("literals", () {
           expect(dtAM.formatAsDotNET('"pst"'), "pst");
-          expect(dtAM.formatAsDotNET(r'"with \"internal\" quoted string"'), 'with "internal" quoted string');
-          expect(dtAM.formatAsDotNET(r'"with \"incomplete quoted string"'), 'with "incomplete quoted string');
+          expect(dtAM.formatAsDotNET(r'"with \"internal\" quoted string"'),
+              'with "internal" quoted string');
+          expect(dtAM.formatAsDotNET(r'"with \"incomplete quoted string"'),
+              'with "incomplete quoted string');
         });
 
         test("throw if no closing quote", () {
-          expect(() => dtAM.formatAsDotNET('"pst'), throwsA(isA<DateTimeFormatException>()));
+          expect(() => dtAM.formatAsDotNET('"pst'),
+              throwsA(isA<DateTimeFormatException>()));
         });
       });
 
@@ -384,13 +412,16 @@ void main() {
         });
 
         test("just time 01", () {
-          expect(dtWithEmptyMilliseconds.formatAsDotNET(r"hh\:mm\:ss"), "02:42:50");
+          expect(dtWithEmptyMilliseconds.formatAsDotNET(r"hh\:mm\:ss"),
+              "02:42:50");
           expect(dtWithEmptyMilliseconds.formatAsDotNET(r"h\:m\:s"), "2:42:50");
         });
 
         test("time with milliseconds", () {
-          expect(dtWithEmptyMilliseconds.formatAsDotNET(r"hh\:mm\:ss.ffffff"), "02:42:50.000678");
-          expect(dtWithEmptyMilliseconds.formatAsDotNET(r"h\:m\:s.FFF"), "2:42:50");
+          expect(dtWithEmptyMilliseconds.formatAsDotNET(r"hh\:mm\:ss.ffffff"),
+              "02:42:50.000678");
+          expect(dtWithEmptyMilliseconds.formatAsDotNET(r"h\:m\:s.FFF"),
+              "2:42:50");
         });
       });
     });
