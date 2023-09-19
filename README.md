@@ -10,7 +10,7 @@ There are some quirks: Because this package is based on both [Intl](https://pub.
   // May 8th, 2023 T 2:42:33.2332
   var dtWithEmptyMilliseconds = DateTime(2023, 05, 08, 14, 42, 50, 000, 678);
 
-  // Formatting with a raw character, in singleton mode
+  // Formatting with a raw character, in multiple mode
   dtWithEmptyMilliseconds.formatAsDotNET("d"); // "5/8/2023"
 ```
 
